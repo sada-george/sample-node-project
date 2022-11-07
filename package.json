@@ -1,7 +1,8 @@
 {
-  "name": "sample-node-project",
+  "name": "sample-node-project-build",
   "version": "1.0.0",
   "description": "Sample Node.js Project",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
