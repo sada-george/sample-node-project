@@ -1,0 +1,6 @@
+---
+branches:
+  - master
+  - name: sada-george-develop
+    prerelease: true
+tagFormat: "${version}"
