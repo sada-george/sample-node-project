@@ -1,8 +1,4 @@
-/*
 
-GEREKLİ PAKETLER YÜKLENİYOR...
-
-*/
 var http = require('http');
 var express = require('express');
 
