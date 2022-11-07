@@ -28,9 +28,10 @@ jobs:
         uses: codfish/semantic-release-action@v2
         id: semantic
         with:
+          tag_format: '${version}-alpha'
           branches: |
             [
-              { name: "sada-george-develop", prerelease: "alpha" },
+              { name: "sada-george-develop", prerelease: true },
               'master'
             ]
         env:
