@@ -1,0 +1,38 @@
+# prettier-ignore
+name: Deploys Develop Branch (adev)
+
+on:
+  push:
+    branches:
+      # - develop
+      - sada-george-develop
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    outputs:
+      release-published: ${{ steps.semantic.outputs.new-release-published }}
+      release-version: ${{ steps.semantic.outputs.release-version }}
+      commit-message: ${{ steps.commit-message.outputs.message }}
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: get commit message
+        id: commit-message
+        run: |
+           echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.event.after }})"
+
+      - name: semantic release
+        uses: codfish/semantic-release-action@v2
+        id: semantic
+        with:
+          dry_run: true
+          branches: |
+            [
+              { name: "sada-george-develop", prerelease: true },
+              'master'
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
