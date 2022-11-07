@@ -28,7 +28,6 @@ jobs:
         uses: codfish/semantic-release-action@v2
         id: semantic
         with:
-          dry_run: true
           branches: |
             [
               { name: "sada-george-develop", prerelease: true },
