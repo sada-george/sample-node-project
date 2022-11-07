@@ -30,7 +30,7 @@ jobs:
         with:
           branches: |
             [
-              { name: "sada-george-develop", prerelease: true },
+              { name: "sada-george-develop", prerelease: "alpha" },
               'master'
             ]
         env:
