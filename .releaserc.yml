@@ -2,5 +2,4 @@
 branches:
   - master
   - name: sada-george-develop
-    prerelease: true
-tagFormat: "${version}"
+    prerelease: "alpha"
