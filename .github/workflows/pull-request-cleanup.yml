@@ -35,9 +35,9 @@ jobs:
           echo "expecting this to just work"
 
       - name: Delete GKE resources from dev-pr namespace
-        if: ${{ github.base_ref == 'main' }}
+        if: ${{ github.base_ref == 'master' }}
         run: |-
-          echo "This is main branch, so running from dev-pr from main"
+          echo "This is master branch, so running from dev-pr from master"
 
       - name: Delete GKE resources from adev-pr namespace
         if: ${{ github.base_ref == 'sada-george-develop' }}
